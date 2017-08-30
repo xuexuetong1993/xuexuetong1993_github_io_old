@@ -1,12 +1,12 @@
 # Basic
-title: 潘柏信
+title: 薛学通
 subtitle: 个人站
 description: 欢迎来到我的个人站~
 # 头像里面的标题
 avatarTitle: leopardpan
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
-url: "http://baixin.io"
+avatarDesc: 生活 / 机器学习 / 思考
+url: "http://xuexuetong1993.github.io"
 
 # Comment
 comment:
@@ -16,10 +16,10 @@ comment:
 
 # Social
 social:
-    weibo: 5366874726 
-    github: leopardpan
+    qq: 995135827 
+    github: xuexuetong1993
     # twitter: 
-    mail: leopardpan@icloud.com
+    mail: xuexuetong1993@gmail.com
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
