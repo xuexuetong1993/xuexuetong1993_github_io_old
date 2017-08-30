@@ -5,7 +5,7 @@ title: 关于我
 
 热爱生活，追求自由，分享一些领域相关的文章和自己的感想思考。
 <p>
-平时喜欢整理个人博客，看闲书，。
+平时喜欢整理个人博客，看闲书电影。
 <p>
 了解一些医学影像相关的图像分割、超分辨基本概念 以及Python 的简单用法。
 <p>
@@ -30,8 +30,6 @@ VIPs Lab is a laboratory for overseas returned scholars sponsored by the Ministr
 <a href="/2016/10/jekyll_tutorials1/"> Jekyll 搭建个人博客 </a>
 教程
 <p>
-
-
 {% include comments.html %}
 
 
