@@ -21,7 +21,7 @@ tag: 深度学习环境搭建
 
     查看是不是成功禁止掉开源驱动
     
-*lsmod | grep nouveau*
+**lsmod | grep nouveau**
 
     新建文件
 
@@ -45,18 +45,18 @@ options nouveau modeset=0*
 
 **sudo apt-get purge nvidia-*
 
-sudo add-apt-repository ppa:graphics-drivers/ppa
+**sudo add-apt-repository ppa:graphics-drivers/ppa**
 
-sudo apt-get update
+**sudo apt-get update**
 
-sudo apt-get install nvidia-367（根据官网给的推荐选择最新的驱动）**
+**sudo apt-get install nvidia-367（根据官网给的推荐选择最新的驱动）**
 
 **reboot //重启**
 
 
 ----------
 
-##4.安装cuda:
+## 4.安装cuda:
 
     cuda官网下载 **cuda-toolkit.runfile**
     移到 Document下面（自己可以找到的位置），给文件权限：
@@ -65,9 +65,10 @@ sudo apt-get install nvidia-367（根据官网给的推荐选择最新的驱动�
 
     关掉桌面环境：
 
-**sudo service lighdm stop
-cd /Document
-sudo ./cuda----**
+**sudo service lighdm stop**
+
+**cd /Document**
+**sudo ./cuda----**
 
     选择跳过 第一步的驱动安装 然后一直yes，location 选择默认（enter）即可。
     安装成功之后添加一下PATH ：
@@ -98,9 +99,11 @@ export PATH
 
     验证：
 
-**cd 1_ultilities 
-cd DeviceQuery
-./deviceQuery**
+**cd 1_ultilities **
+
+**cd DeviceQuery**
+
+**./deviceQuery**
 
 ##显示 ：PASS
 
