@@ -1,0 +1,112 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title></title>
+<style id="system" type="text/css">h1,h2,h3,h4,h5,h6,p,blockquote {    margin: 0;    padding: 0;}body {    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;    font-size: 13px;    line-height: 18px;    color: #737373;    margin: 10px 13px 10px 13px;}a {    color: #0069d6;}a:hover {    color: #0050a3;    text-decoration: none;}a img {    border: none;}p {    margin-bottom: 9px;}h1,h2,h3,h4,h5,h6 {    color: #404040;    line-height: 36px;}h1 {    margin-bottom: 18px;    font-size: 30px;}h2 {    font-size: 24px;}h3 {    font-size: 18px;}h4 {    font-size: 16px;}h5 {    font-size: 14px;}h6 {    font-size: 13px;}hr {    margin: 0 0 19px;    border: 0;    border-bottom: 1px solid #ccc;}blockquote {    padding: 13px 13px 21px 15px;    margin-bottom: 18px;    font-family:georgia,serif;    font-style: italic;}blockquote:before {    content:"C";    font-size:40px;    margin-left:-10px;    font-family:georgia,serif;    color:#eee;}blockquote p {    font-size: 14px;    font-weight: 300;    line-height: 18px;    margin-bottom: 0;    font-style: italic;}code, pre {    font-family: Monaco, Andale Mono, Courier New, monospace;}code {    background-color: #fee9cc;    color: rgba(0, 0, 0, 0.75);    padding: 1px 3px;    font-size: 12px;    -webkit-border-radius: 3px;    -moz-border-radius: 3px;    border-radius: 3px;}pre {    display: block;    padding: 14px;    margin: 0 0 18px;    line-height: 16px;    font-size: 11px;    border: 1px solid #d9d9d9;    white-space: pre-wrap;    word-wrap: break-word;}pre code {    background-color: #fff;    color:#737373;    font-size: 11px;    padding: 0;}@media screen and (min-width: 768px) {    body {        width: 748px;        margin:10px auto;    }}</style><style id="custom" type="text/css"></style></head>
+<body marginheight="0"><p><img src="mahua-logo.jpg" alt="mahua">
+</p>
+<h2>Nvidia-driver-cuda-by-Xt</h2>
+<h2>1.首先按照NVIDIA document：<a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions">http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions</a></h2>
+<h4>上的规范 完成post-install</h4>
+<h2>2.禁止掉nouveau 开源驱动：</h2>
+<p> 查看是不是成功禁止掉开源驱动
+
+</p>
+<h3>$lsmod | grep nouveau</h3>
+<p>新建blacklist文件
+
+</p>
+<h3>$sudo gedit /etc/modprobe.d/blacklist-nouveau.conf</h3>
+<p>将下面两行复制进去保存：
+
+</p>
+<h6>blacklist nouveau</h6>
+<h6>options nouveau modeset=0</h6>
+<p>运行重新生成kernel inintramfs
+
+</p>
+<h3>$ sudo dracut --force</h3>
+<p>联网后进入下一步
+
+</p>
+<h2>3.安装驱动：</h2>
+<p>在你的用户登录界面按ctrl+alt+F1进入tty模式
+
+</p>
+<p>输入你的账户名和密码
+
+</p>
+<p>依次运行如下语句：
+
+</p>
+<h3>sudo apt-get purge nvidia-*</h3>
+<h3>sudo add-apt-repository ppa:graphics-drivers/ppa</h3>
+<h3>sudo apt-get update</h3>
+<h3>sudo apt-get install nvidia-367（根据官网给的推荐选择最新的驱动）</h3>
+<h3>reboot //重启</h3>
+<h2>4.安装cuda:</h2>
+<p>cuda官网下载 cuda-toolkit.runfile,挪到 Document或者Downloader下面（自己可以找到的位置）
+
+</p>
+<p>给文件权限：
+</p>
+<h3>$sudo chomod a+x cuda------(文件名)</h3>
+<p>关掉桌面环境：
+</p>
+<h3>$sudo service lighdm stop</h3>
+<h3>$cd /Document</h3>
+<h3>$sudo ./cuda----</h3>
+<p>选择跳过 第一步的驱动安装 然后一直yes，location 选择默认（enter）即可。
+
+</p>
+<p>安装成功之后添加一下PATH 
+
+</p>
+<h3>$sudo vim /etc/profile在文件末尾添加：</h3>
+<p>PATH=/usr/local/cuda/bin:$PATH 
+
+</p>
+<p>export PATH
+
+</p>
+<p>保存退出。输入命令
+
+</p>
+<h3>$source /etc/profile</h3>
+<p>使其生效。
+
+</p>
+<h2>5.后续验证步骤</h2>
+<p>测试cuda是否安装成功：
+
+</p>
+<h3>$cd /usr/local/cuda/samples</h3>
+<p>编译例子：
+
+</p>
+<h3>$sudo make all -j8，运行编译可执行结果文件</h3>
+<p>验证：
+
+</p>
+<h3>$cd 1_ultilities</h3>
+<h3>$cd DeviceQuery</h3>
+<h3>$./deviceQuery</h3>
+<p>显示 ：PASS
+安装完成
+
+
+</p>
+<h2>有问题反馈</h2>
+<p>在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
+
+</p>
+<ul>
+<li>邮件(xuexuetong1993@gmail.com)</li>
+<li>QQ: 995135827</li>
+</ul>
+<h2>关于作者</h2>
+<pre><code class="lang-javascript">  var x = {
+    nickName  : "薛学通",
+    site : "https://xuexuetong1993.github.io/"
+  }</code></pre>
+<p>Edit By <a href="http://mahua.jser.me">MaHua</a></p>
+</body></html>
