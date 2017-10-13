@@ -44,9 +44,13 @@ options nouveau modeset=0*
     依次运行如下语句：
 
 **sudo apt-get purge nvidia-*
+
 sudo add-apt-repository ppa:graphics-drivers/ppa
+
 sudo apt-get update
+
 sudo apt-get install nvidia-367（根据官网给的推荐选择最新的驱动）**
+
 **reboot //重启**
 
 
