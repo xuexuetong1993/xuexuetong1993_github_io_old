@@ -7,7 +7,7 @@ tag: 深度学习环境搭建
 
 ---  
 
-# Nvidia-driver-cuda
+# Ubuntu16.04上安装 Nvidia-driver-cuda8.0
 
 
 ----------
@@ -20,7 +20,8 @@ tag: 深度学习环境搭建
 ##2.禁止掉nouveau 开源驱动：
 
     查看是不是成功禁止掉开源驱动
-**lsmod | grep nouveau**
+    
+*lsmod | grep nouveau*
 
     新建文件
 
