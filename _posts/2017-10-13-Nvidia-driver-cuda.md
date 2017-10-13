@@ -1,4 +1,13 @@
-﻿# Nvidia-driver-cuda
+---
+layout: post
+title: "cuda8.0安装教程（Ubuntu16.04）"
+date: 2017-10-16 
+description: "环境配置篇"
+tag: 深度  学习环境搭建
+
+---  
+
+# Nvidia-driver-cuda
 
 
 ----------
